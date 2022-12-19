@@ -5,7 +5,7 @@
 '''
 N = int(input('Enter the number: '))
 
-a = 0
-while N >= a:
+b = 0
+while N >= b:
     a += 1
     print ("*" * a )
