@@ -7,5 +7,6 @@ N = int(input('Enter the number: '))
 
 b = 0
 while N >= b:
+    print("*" * b)
     b += 1
-    print ("*" * b )
+
