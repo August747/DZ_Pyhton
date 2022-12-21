@@ -60,7 +60,7 @@ if has_spec:
 
 print ('Password score:', score)
 
-if score < 4:
+if score < 5:
     print ('Recommendation:')
 if len(password) < 8:
     print('The minimum password length is 8')
@@ -70,5 +70,5 @@ if has_upper == False:
     print('Use capital letters')
 if has_lower == False:
     print('Use lower case letters')
-if has_spec == False :
+if has_spec == True :
   print('Use special characters')
