@@ -53,7 +53,7 @@ if has_lower:
 
 for spec in password:
     if spec.isalnum():
-        has_spec = False
+        has_spec = True
         break
 if has_spec:
     score +=1
