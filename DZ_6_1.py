@@ -53,7 +53,7 @@ if has_lower:
 
 for spec in password:
     if spec.isalnum():
-        has_spec = True
+        has_spec = False
         break
 if has_spec:
     score +=1
@@ -65,7 +65,7 @@ if score < 4:
 if len(password) < 8:
     print('The minimum password length is 8')
 if has_digit == False:
-    print('Use digits ')
+    print('Use digits')
 if has_upper == False:
     print('Use capital letters')
 if has_lower == False:
