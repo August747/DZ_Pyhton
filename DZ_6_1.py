@@ -58,7 +58,7 @@ for spec in password:
 if has_spec:
     score +=1
 
-print ('Password score:', score )
+print ('Password score:', score)
 
 if score < 4:
     print ('Recommendation:')
