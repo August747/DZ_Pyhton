@@ -18,14 +18,13 @@
 password = input('Enter your password: ')
 
 has_digit = False
-has_Upper = False
+has_upper = False
 has_lower = False
+has_spec = False
 score=0
 
 if len(password) >= 8:
-    score += 1
-else:
-    print ('Recommendation: The minimum password length is 8')
+     score += 1
 
 
 for char in password:
@@ -34,17 +33,14 @@ for char in password:
         break
 if has_digit:
     score += 1
-else:
-    print ('Recommendation: Use digits ')
+
 
 for up in password:
     if up.isupper():
-        has_Upper = True
-        break
-if has_Upper:
-    score += 1
-else:
-    print ('Recommendation: Use capital letters')
+       has_upper = True
+       break
+if has_upper:
+   score += 1
 
 
 for lower in password:
@@ -53,9 +49,26 @@ for lower in password:
         break
 if has_lower:
     score += 1
-else:
-    print ('Recommendation: Use lower case letters')
 
 
+for spec in password:
+    if spec.isalnum():
+        has_spec = True
+        break
+if has_spec:
+    score +=1
 
-print (score)
+print ('Password score:', score )
+
+if score < 4:
+    print ('Recommendation:')
+if len(password) < 8:
+    print('The minimum password length is 8')
+if has_digit == False:
+    print('Use digits ')
+if has_upper == False:
+    print('Use capital letters')
+if has_lower == False:
+    print('Use lower case letters')
+if has_spec == False :
+  print('Use special characters')
