@@ -52,11 +52,11 @@ if has_lower:
 
 
 for spec in password:
-    if spec.isalnum():
+    if not spec.isalnum():
         has_spec = True
         break
-if has_spec:
-    score +=1
+if not has_lower:
+    score += 1
 
 print ('Password score:', score)
 
@@ -70,5 +70,5 @@ if has_upper == False:
     print('Use capital letters')
 if has_lower == False:
     print('Use lower case letters')
-if has_spec == True :
+if has_spec == False :
   print('Use special characters')
