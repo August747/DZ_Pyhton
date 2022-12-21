@@ -20,7 +20,7 @@ password = input('Enter your password: ')
 has_digit = False
 has_upper = False
 has_lower = False
-has_spec = False
+has_spec = True
 score=0
 
 if len(password) >= 8:
@@ -53,7 +53,7 @@ if has_lower:
 
 for spec in password:
     if not spec.isalnum():
-        has_spec = True
+        has_spec = False
         break
 if not has_lower:
     score += 1
@@ -70,5 +70,5 @@ if has_upper == False:
     print('Use capital letters')
 if has_lower == False:
     print('Use lower case letters')
-if has_spec == False :
+if has_spec == True :
   print('Use special characters')
