@@ -55,7 +55,7 @@ for spec in password:
     if not spec.isalnum():
         has_spec = False
         break
-if has_lower:
+if not has_spec:
     score += 1
 
 print('Password score:', score)
