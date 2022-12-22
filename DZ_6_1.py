@@ -21,10 +21,10 @@ has_digit = False
 has_upper = False
 has_lower = False
 has_spec = True
-score=0
+score = 0
 
 if len(password) >= 8:
-     score += 1
+    score += 1
 
 
 for char in password:
@@ -37,10 +37,10 @@ if has_digit:
 
 for up in password:
     if up.isupper():
-       has_upper = True
-       break
+        has_upper = True
+        break
 if has_upper:
-   score += 1
+    score += 1
 
 
 for lower in password:
@@ -55,13 +55,13 @@ for spec in password:
     if not spec.isalnum():
         has_spec = False
         break
-if not has_lower:
+if has_lower:
     score += 1
 
-print ('Password score:', score)
+print('Password score:', score)
 
 if score < 5:
-    print ('Recommendation:')
+    print('Recommendation:')
 if len(password) < 8:
     print('The minimum password length is 8')
 if has_digit == False:
