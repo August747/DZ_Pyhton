@@ -61,14 +61,12 @@
 
 Количество цифр: 7
 '''
-a = input('Enter firs number: ')
-b = input('Enter second number: ')
-c = input('Enter third number: ')
-d = input('Enter fourth number: ')
-e = input('Enter fifth number: ')
 
-s = [a, b, c, d, e]
-print(s)
+A = []
+for i in range(1,6,1):
+    number = int(input(f'Enter your {i} number: '))
+    A.append(number)
+print(A)
 
 
 
@@ -78,22 +76,68 @@ print(A)
 
 
 
-num1 = input('Enter 1st number: ')
-num2 = input('Enter 2nd number: ')
-num3 = input('Enter 3rd number: ')
-num4 = input('Enter 4th number: ')
-num5 = input('Enter 5th number: ')
-num6 = input('Enter 6th number: ')
-num7 = input('Enter 7th number: ')
-num8 = input('Enter 8th number: ')
-num9 = input('Enter 9tn number: ')
-num10 = input('Enter 10ер number: ')
+A = []
+score = 0
+for i in range(1,11,1):
+    number = int(input(f'Enter your {i} number: '))
+    A.append(number)
 
-A = [num1, num2, num3, num4, num5, num6, num7, num8, num9, num10]
+N = int(input('Enter your search number: '))
 
-N = input('Enter your search number: ')
-
-for N in A:
-    print(N.count(A))
+print('Your number of search number equals:', A.count(N))
 
 
+
+N = int(input('Enter number N: '))
+A = []
+N += 1
+for N in range(1,N,1):
+    number = int(input(f'Enter your {N} number: '))
+    A.append(number)
+A.reverse()
+print(A)
+
+
+
+A = []
+C = []
+for i in range(1,6):
+    number = int(input(f'Enter your {i} number: '))
+    A.append(number)
+    if number > 5:
+        C.append(number)
+print(A)
+print(C)
+
+
+
+N = int(input('Enter your ''N'' number: '))
+A = []
+for i in range(N):
+    number = int(input(f'Enter {i + 1} integer number: '))
+    A.append(number)
+    if i == 0:
+      max_number = number
+      min_number = number
+      continue
+    elif number > max_number:
+        max_number = number
+        continue
+    elif number < min_number:
+        min_number = number
+print('Your minimum number: ', min_number)
+print('Your maximum number: ', max_number)
+
+
+
+text = []
+a = input('Введите ваш текст: ')
+text.append(a)
+score = 0
+
+for char in a:
+    if char.isdigit():
+        score += 1
+
+print(text)
+print('Количество цифр: ', score)
