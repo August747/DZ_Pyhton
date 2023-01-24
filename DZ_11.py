@@ -21,6 +21,3 @@ C = A | B
 print(C)
 D = B - A
 print(D)
-
-
-
