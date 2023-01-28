@@ -19,13 +19,13 @@ m запросов вида «операция файл».
 
 Для каждого допустимого запроса программа должна возвращать OK, для недопустимого – Access denied.
 """
-
 n = int(input('Enter the number of files: '))
-
-files = {}
 access_rights = {'R': 'read',
                  'X': 'execute',
                  'W': 'write'}
+files = {}
+
+
 for i in range(n):
     a = input('Enter your file: ').split()
     files[a[0]] = [access_rights[i] for i in a[1:]]
