@@ -58,6 +58,15 @@ for spec in password:
 if not has_spec:
     score += 1
 
+for char in password:
+    if char.isdigit():
+        has_digit = True
+        break
+if has_digit:
+    score += 1
+
+
+
 print('Password score:', score)
 
 if score < 5:

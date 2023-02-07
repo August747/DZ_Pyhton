@@ -14,10 +14,7 @@ def change(lst):
 
 
 def to_dict(lst):
-    dict_list = {}
-    for i in range(len(lst)):
-        dict_list[lst[i]] = lst[i]
-    return dict_list
+    return {value: value for value in lst}
 
 
 
@@ -26,7 +23,8 @@ def sum_range(start, end) -> int:
     if start > end:
         for i in range(end, start + 1, 1):
             sum += i
-        return sum
-    for i in range(start, end + 1, 1):
-        sum += i
+    else:
+        for i in range(start, end + 1, 1):
+            sum += i
     return sum
+
