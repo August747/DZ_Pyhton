@@ -5,6 +5,8 @@
 3)Напишите функцию sum_range(start, end), которая суммирует все целые числа от значения «start» до величины «end» включительно.
 Если пользователь задаст первое число большее чем второе, просто поменяйте их местами.
 """
+
+
 def change(lst):
     if len(lst) < 2:
         return ('Enter list with 2 numbers at least')
@@ -12,10 +14,8 @@ def change(lst):
     return lst
 
 
-
 def to_dict(lst):
     return {value: value for value in lst}
-
 
 
 def sum_range(start, end) -> int:
@@ -27,4 +27,3 @@ def sum_range(start, end) -> int:
         for i in range(start, end + 1, 1):
             sum += i
     return sum
-
