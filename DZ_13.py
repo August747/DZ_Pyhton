@@ -21,9 +21,7 @@ def to_dict(lst):
 def sum_range(start, end) -> int:
     sum = 0
     if start > end:
-        for i in range(end, start + 1, 1):
-            sum += i
-    else:
-        for i in range(start, end + 1, 1):
+        start, end = end, start
+    for i in range(start, end + 1, 1):
             sum += i
     return sum
