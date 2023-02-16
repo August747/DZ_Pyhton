@@ -27,7 +27,7 @@ if len(password) >= 8:
     score += 1
 
 
-for char in password:
+char for char in password if char.isdigit()
     if char.isdigit():
         has_digit = True
         break

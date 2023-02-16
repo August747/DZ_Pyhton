@@ -21,23 +21,25 @@ triangle_area внутри декоратора и сохраняем в сло�
 выполнения этой функции с параметрами a=5, b=10 из декоратора."""
 
 
+from typing import Optional
 def cache_decorator(func):
-    data = {}
+    cache = {}
 
-    def inner(*args):
-        if data.get(tuple(args)) is None:
-            value = func(*args)
-            data[tuple(args)] = value
-            return value
-        else:
-            return data[tuple(args)]
+    def inner(*args, **kwargs):
+        cache_key = args + tuple(kwargs.values())
+        if cache_key in cache:
+            return cache[cache_key]
+        res = func(*args, **kwargs)
+        cache[args] = res
+        return res
     return inner
 
 
 @cache_decorator
-def triangle_area(a: float, b: float) -> float:
-    print(f'Вызвана функция triangle_area с аргументами {a} и {b}')
-    return a * b
+def triangle_area(a: float, b: float, **kwargs) -> float:
+    print(f'Вызвана функция triangle_area с аргументами {a} и {b} и строка')
+    z = [a * b]
+    return z
 
 
 @cache_decorator
@@ -47,9 +49,9 @@ def circle_area(x: float, y: float) -> float:
 
 
 print('Результат выполнения triangle_area(5, 10):',
-      triangle_area(5, 10))  # Тело функции выполниться так как функция вызывается в первый раз с такими аргументами
+      triangle_area(5, 10, first="Geeks", mid="for", last="Geeks"))  # Тело функции выполниться так как функция вызывается в первый раз с такими аргументами
 print('Результат выполнения triangle_area(5, 10):',
-      triangle_area(5, 10))  # Тело функции не выполниться так как функция ранее вызывалась с такими аргументами
+      triangle_area(5, 10, first="Geeks", mid="for", last="Geeks"))  # Тело функции не выполниться так как функция ранее вызывалась с такими аргументами
 print('Результат выполнения circle_area(5, 10):',
       circle_area(5, 10))  # Тело функции выполниться так как функция вызывается в первый раз с такими аргументами
 print('Результат выполнения circle_area(5, 10):',

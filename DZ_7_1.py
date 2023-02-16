@@ -62,10 +62,8 @@
 Количество цифр: 7
 '''
 
-A = []
-for i in range(1,6,1):
-    number = int(input(f'Enter your {i} number: '))
-    A.append(number)
+A = [ for i in range(6)]
+# A = [number = int(input(f'Enter your {i} number: ')) for i in range(5) A.append(number)]
 print(A)
 
 
