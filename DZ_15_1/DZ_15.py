@@ -75,7 +75,7 @@ for i in random_numbers:
 text = open('random_text.txt', 'r')
 text = text.read()
 words = len(text.split())
-print(f'В файле {words} слов')
+print(f'Количество слов в файле - {words} ')
 
 
 nums = open('numbers.txt', 'r')
