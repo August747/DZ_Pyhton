@@ -38,59 +38,59 @@
 import random
 from collections import Counter
 
-# numbers = []
-# text = (open('file.txt', 'r'))
-# txt1 = text.read()
-# new_text = txt1.replace('.', '').split()
-#
-# for i in new_text:
-#     if i.isdigit():
-#         numbers.append(i)
-# print(numbers)
+numbers = []
+text = (open('file.txt', 'r'))
+txt1 = text.read()
+new_text = txt1.replace('.', '').split()
+for i in new_text:
+    if i.isdigit():
+        numbers.append(i)
+print(numbers)
 
 
-# text = input('Enter your text: ')
-# file = open('data.txt', 'w')
-# file.write(text)
+text = input('Enter your text: ')
+file = open('data.txt', 'w')
+file.write(text)
 
 
-# nums = ''
-# N = int(input('Enter your N number: '))
-# for i in range(1, N + 1):
-#     num = input(f'Enter your {i} number: ')
-#     nums = f'{nums} {num}'
-# print(nums)
-# file = open('numbers.txt', 'w')
-# file.write(str(nums))
+nums = ''
+N = int(input('Enter your N number: '))
+for i in range(1, N + 1):
+    num = input(f'Enter your {i} number: ')
+    nums = f'{nums} {num}'
+file = open('numbers.txt', 'w')
+file.write(str(nums))
 
 
-# file = open('random_numbers.txt', 'w')
-# random_numbers = []
-# for i in range(100):
-#     a = random.randint(1, 100)
-#     random_numbers.append(a)
-# for i in random_numbers:
-#     x = (f'{i}\n')
-#     file.write(str(x))
+file = open('random_numbers.txt', 'w')
+random_numbers = []
+for i in range(100):
+    a = random.randint(1, 100)
+    random_numbers.append(a)
+for i in random_numbers:
+    x = (f'{i}\n')
+    file.write(str(x))
 
 
-# text = open('random_text.txt', 'r')
-# text = text.read()
-# words = len(text.split())
-# print(words)
+text = open('random_text.txt', 'r')
+text = text.read()
+words = len(text.split())
+print(f'В файле {words} слов')
 
 
-# nums = open('numbers.txt', 'r')
-# nums = nums.read()
-# summa = 0
-# for i in nums:
-#     if i.isdigit():
-#         summa += int(i)
-# print(summa)
+nums = open('numbers.txt', 'r')
+nums = nums.read()
+summa = 0
+for i in nums:
+    if i.isdigit():
+        summa += int(i)
+print(f'Сумма чисел равна {summa}')
 
 
 text = open('random_text.txt', 'r')
 text = text.read()
 a = text.split()
-# b = Counter(a)
-print(a)
+for key, value in Counter(a).most_common(5):
+    print(f'Слово "{key}" - {value} раз')
+
+
