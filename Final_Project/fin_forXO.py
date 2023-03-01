@@ -104,8 +104,9 @@ def check_for_tie(board):
 def play_game():
     print('Добро пожаловать в игру Крестики-нолики!')
     difficulty_level = input('Выберете уровень сложности (легкий или сложный): ').lower()
-    symbol = ''
+    symbol = input('Вы выбираете X или O?: ').upper()
     while symbol != 'X' and symbol != 'O':
+        print('Введенные данные не корректны, попробуйте еще раз.')
         symbol = input('Вы выбираете X или O?: ').upper()
     if symbol == 'X':
         computer_symbol = 'O'
